@@ -43,7 +43,7 @@ public class LevelManager : MonoBehaviour
         DataSoal soal = _soalSoal[_indexSoal];
 
         // Set informasi soal
-        _tempatPertanyaan.SetPertanyaan(soal.pertanyaan, soal.hint);
+        _tempatPertanyaan.SetPertanyaan($"Level {_indexSoal + 1}", soal.pertanyaan, soal.hint);
 
         for (int i = 0; i < _tempatPilihanJawaban.Length; i++)
         {
