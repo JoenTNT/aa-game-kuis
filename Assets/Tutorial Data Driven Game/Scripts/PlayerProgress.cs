@@ -18,8 +18,24 @@ public class PlayerProgress : ScriptableObject
 
     public void SimpanProgres()
     {
+        // Sampel Data
+        progresData.koin = 200;
+        if (progresData.progresLevel == null)
+            progresData.progresLevel = new();
+        progresData.progresLevel.Add("Level Pack 1", 3);
+        progresData.progresLevel.Add("Level Pack 3", 5);
+
+        // Informasi penyimpanan data
         string fileName = "contoh.txt";
-        string path = Application.dataPath + "/" + fileName;
+        string directory = Application.dataPath + "/Temporary/";
+        string path = directory + fileName;
+
+        // Membuat Directory Temporary
+        if (!Directory.Exists(directory))
+        {
+            Directory.CreateDirectory(directory);
+            Debug.Log("Directory has been Created: " + directory);
+        }
 
         // Membuat file baru
         if (!File.Exists(path))
@@ -29,7 +45,14 @@ public class PlayerProgress : ScriptableObject
         }
 
         // Menyimpan data ke dalam file
-        string kontenData = "Ini adalah data yang disimpan dalam file";
+        string kontenData = $"{progresData.koin}\n";
+        int hitungPack = 0;
+        foreach (var i in progresData.progresLevel)
+        {
+            kontenData += $"{i.Key}-{i.Value}";
+            kontenData += hitungPack >= progresData.progresLevel.Count ? string.Empty : ";";
+            hitungPack++;
+        }
         File.WriteAllText(path, kontenData);
 
         Debug.Log("Data saved to file: " + path);
