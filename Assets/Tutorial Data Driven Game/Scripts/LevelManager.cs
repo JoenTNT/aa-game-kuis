@@ -6,6 +6,9 @@ public class LevelManager : MonoBehaviour
     private LevelPackKuis _soalSoal = null;
 
     [SerializeField]
+    private PlayerProgress _playerProgress = null;
+
+    [SerializeField]
     private UI_Pertanyaan _tempatPertanyaan = null;
 
     [SerializeField]
@@ -15,6 +18,7 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
+        _playerProgress.SimpanProgres();
         NextLevel();
     }
 
