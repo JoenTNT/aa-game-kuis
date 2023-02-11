@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
 [CreateAssetMenu(
@@ -14,6 +15,7 @@ public class PlayerProgress : ScriptableObject
         public Dictionary<string, int> progresLevel;
     }
 
+    public string fileName = "contoh.txt";
     public MainData progresData = new MainData();
 
     public void SimpanProgres()
@@ -26,7 +28,6 @@ public class PlayerProgress : ScriptableObject
         progresData.progresLevel.Add("Level Pack 3", 5);
 
         // Informasi penyimpanan data
-        string fileName = "contoh.txt";
         string directory = Application.dataPath + "/Temporary/";
         string path = directory + fileName;
 
@@ -44,16 +45,26 @@ public class PlayerProgress : ScriptableObject
             Debug.Log("File created: " + path);
         }
 
-        // Menyimpan data ke dalam file
-        string kontenData = $"{progresData.koin}\n";
-        int hitungPack = 0;
-        foreach (var i in progresData.progresLevel)
-        {
-            kontenData += $"{i.Key}-{i.Value}";
-            kontenData += hitungPack >= progresData.progresLevel.Count ? string.Empty : ";";
-            hitungPack++;
-        }
-        File.WriteAllText(path, kontenData);
+        // Menyimpan data ke dalam file menggunakan binari formatter
+        var fileStream = File.Open(path, FileMode.Open);
+        var formatter = new BinaryFormatter();
+
+        fileStream.Flush();
+        formatter.Serialize(fileStream, progresData);
+
+        //// Menyimpan data ke dalam file menggunakan binari writer
+        //var writer = new BinaryWriter(fileStream);
+
+        //writer.Write(progresData.koin);
+        //foreach (var i in progresData.progresLevel)
+        //{
+        //    writer.Write(i.Key);
+        //    writer.Write(i.Value);
+        //}
+
+        // Putuskan aliran memori dengan File
+        //writer.Dispose();
+        fileStream.Dispose();
 
         Debug.Log("Data saved to file: " + path);
     }
