@@ -18,7 +18,13 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        _playerProgress.SimpanProgres();
+        // Chek apabila tidak berhasil memuat progres
+        if (!_playerProgress.MuatProgres())
+        {
+            // Buat simpanan progres atau ganti dengan yang baru
+            _playerProgress.SimpanProgres();
+        }
+        
         NextLevel();
     }
 

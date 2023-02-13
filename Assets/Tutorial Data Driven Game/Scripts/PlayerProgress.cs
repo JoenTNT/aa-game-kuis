@@ -69,8 +69,32 @@ public class PlayerProgress : ScriptableObject
         Debug.Log("Data saved to file: " + path);
     }
 
-    public void MuatProgres()
+    public bool MuatProgres()
     {
-        // TODO: Prosedur untuk muat data
+        // Informasi untuk memuat data
+        string directory = Application.dataPath + "/Temporary/";
+        string path = directory + fileName;
+
+        try
+        {
+            // Memuat data dari file menggunakan binari formatter
+            var fileStream = File.Open(path, FileMode.Open);
+            var formatter = new BinaryFormatter();
+
+            progresData = (MainData)formatter.Deserialize(fileStream);
+
+            // Putuskan aliran memori dengan File
+            fileStream.Dispose();
+
+            Debug.Log($"{progresData.koin}; {progresData.progresLevel.Count}");
+
+            return true;
+        }
+        catch (System.Exception e)
+        {
+            Debug.Log($"ERROR: Terjadi kesalahan saat memuat progres\n{e.Message}");
+
+            return false;
+        }
     }
 }
