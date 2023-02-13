@@ -31,7 +31,7 @@ public class PlayerProgress : ScriptableObject
         string directory = Application.dataPath + "/Temporary/";
         string path = directory + fileName;
 
-        // Membuat Directory Temporary
+        // Membuat Directory Temporary jika belum ada
         if (!Directory.Exists(directory))
         {
             Directory.CreateDirectory(directory);
@@ -53,17 +53,19 @@ public class PlayerProgress : ScriptableObject
         formatter.Serialize(fileStream, progresData);
 
         //// Menyimpan data ke dalam file menggunakan binari writer
+        //var fileStream = File.Open(path, FileMode.Open);
         //var writer = new BinaryWriter(fileStream);
 
+        //fileStream.Flush();
         //writer.Write(progresData.koin);
         //foreach (var i in progresData.progresLevel)
         //{
         //    writer.Write(i.Key);
         //    writer.Write(i.Value);
         //}
+        //writer.Dispose();
 
         // Putuskan aliran memori dengan File
-        //writer.Dispose();
         fileStream.Dispose();
 
         Debug.Log("Data saved to file: " + path);
@@ -75,13 +77,50 @@ public class PlayerProgress : ScriptableObject
         string directory = Application.dataPath + "/Temporary/";
         string path = directory + fileName;
 
+        // Membuat Directory Temporary jika belum ada
+        if (!Directory.Exists(directory))
+        {
+            Directory.CreateDirectory(directory);
+            Debug.Log("Directory has been Created: " + directory);
+        }
+
+        // Buka file dengan Filestream
+        var fileStream = File.Open(path, FileMode.OpenOrCreate);
+
         try
         {
             // Memuat data dari file menggunakan binari formatter
-            var fileStream = File.Open(path, FileMode.Open);
             var formatter = new BinaryFormatter();
 
             progresData = (MainData)formatter.Deserialize(fileStream);
+
+            //// Memuat data dari file menggunakan binari reader
+            //var reader = new BinaryReader(fileStream);
+
+            //try
+            //{
+            //    if (reader.PeekChar() != -1)
+            //        progresData.koin = reader.ReadInt32();
+            //    if (progresData.progresLevel == null)
+            //        progresData.progresLevel = new();
+            //    while (reader.PeekChar() != -1)
+            //    {
+            //        var namaLevelPack = reader.ReadString();
+            //        var levelKe = reader.ReadInt32();
+            //        progresData.progresLevel.Add(namaLevelPack, levelKe);
+            //        Debug.Log($"{namaLevelPack}:{levelKe}");
+            //    }
+
+            //    // Putuskan aliran memori dengan File
+            //    reader.Dispose();
+            //}
+            //catch (System.Exception e)
+            //{
+            //    Debug.Log($"ERROR: Terjadi kesalahan saat memuat progres binari.\n{e.Message}");
+
+            //    // Putuskan aliran memori dengan File
+            //    reader.Dispose();
+            //}
 
             // Putuskan aliran memori dengan File
             fileStream.Dispose();
@@ -93,6 +132,9 @@ public class PlayerProgress : ScriptableObject
         catch (System.Exception e)
         {
             Debug.Log($"ERROR: Terjadi kesalahan saat memuat progres\n{e.Message}");
+
+            // Putuskan aliran memori dengan File
+            fileStream.Dispose();
 
             return false;
         }
