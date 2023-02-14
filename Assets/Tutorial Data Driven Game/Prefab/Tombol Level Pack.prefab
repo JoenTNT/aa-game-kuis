@@ -93,7 +93,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 18
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 8957736497509831640}
   - component: {fileID: 8957736497509831641}
   - component: {fileID: 8957736497509831642}
+  - component: {fileID: 2479148006058854086}
   m_Layer: 5
   m_Name: Tombol Level Pack
   m_TagString: Untagged
@@ -257,3 +258,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2479148006058854086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8957736497509831636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71a9a70357000ec43b1a2deefbf69765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _packName: {fileID: 8957736496976817437}
+  _levelPack: {fileID: 0}

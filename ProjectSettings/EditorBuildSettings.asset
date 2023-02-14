@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Tutorial Data Driven Game/Scenes/Start Menu.unity
+    guid: 284fc9c7f0db5f649989e8262253792a
+  - enabled: 1
+    path: Assets/Tutorial Data Driven Game/Scenes/Menu Pilih Level.unity
+    guid: fef06a956f44fc04283c3a0eecd22c33
+  - enabled: 1
     path: Assets/Tutorial Data Driven Game/Scenes/Gameplay.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
