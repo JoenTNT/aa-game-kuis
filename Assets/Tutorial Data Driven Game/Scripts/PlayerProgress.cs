@@ -45,25 +45,25 @@ public class PlayerProgress : ScriptableObject
             Debug.Log("File created: " + path);
         }
 
-        //// Menyimpan data ke dalam file menggunakan binari formatter
-        //var fileStream = File.Open(path, FileMode.Open);
-        //var formatter = new BinaryFormatter();
-
-        //fileStream.Flush();
-        //formatter.Serialize(fileStream, progresData);
-
-        // Menyimpan data ke dalam file menggunakan binari writer
+        // Menyimpan data ke dalam file menggunakan binari formatter
         var fileStream = File.Open(path, FileMode.Open);
-        var writer = new BinaryWriter(fileStream);
+        var formatter = new BinaryFormatter();
 
         fileStream.Flush();
-        writer.Write(progresData.koin);
-        foreach (var i in progresData.progresLevel)
-        {
-            writer.Write(i.Key);
-            writer.Write(i.Value);
-        }
-        writer.Dispose();
+        formatter.Serialize(fileStream, progresData);
+
+        //// Menyimpan data ke dalam file menggunakan binari writer
+        //var fileStream = File.Open(path, FileMode.Open);
+        //var writer = new BinaryWriter(fileStream);
+
+        //fileStream.Flush();
+        //writer.Write(progresData.koin);
+        //foreach (var i in progresData.progresLevel)
+        //{
+        //    writer.Write(i.Key);
+        //    writer.Write(i.Value);
+        //}
+        //writer.Dispose();
 
         // Putuskan aliran memori dengan File
         fileStream.Dispose();
@@ -89,39 +89,39 @@ public class PlayerProgress : ScriptableObject
 
         try
         {
-            //// Memuat data dari file menggunakan binari formatter
-            //var formatter = new BinaryFormatter();
+            // Memuat data dari file menggunakan binari formatter
+            var formatter = new BinaryFormatter();
 
-            //progresData = (MainData)formatter.Deserialize(fileStream);
+            progresData = (MainData)formatter.Deserialize(fileStream);
 
-            // Memuat data dari file menggunakan binari reader
-            var reader = new BinaryReader(fileStream);
+            //// Memuat data dari file menggunakan binari reader
+            //var reader = new BinaryReader(fileStream);
 
-            try
-            {
-                progresData.koin = reader.ReadInt32();
-                if (progresData.progresLevel == null)
-                    progresData.progresLevel = new();
-                while (reader.PeekChar() != -1)
-                {
-                    var namaLevelPack = reader.ReadString();
-                    var levelKe = reader.ReadInt32();
-                    progresData.progresLevel.Add(namaLevelPack, levelKe);
-                    Debug.Log($"{namaLevelPack}:{levelKe}");
-                }
+            //try
+            //{
+            //    progresData.koin = reader.ReadInt32();
+            //    if (progresData.progresLevel == null)
+            //        progresData.progresLevel = new();
+            //    while (reader.PeekChar() != -1)
+            //    {
+            //        var namaLevelPack = reader.ReadString();
+            //        var levelKe = reader.ReadInt32();
+            //        progresData.progresLevel.Add(namaLevelPack, levelKe);
+            //        Debug.Log($"{namaLevelPack}:{levelKe}");
+            //    }
 
-                // Putuskan aliran memori dengan File
-                reader.Dispose();
-            }
-            catch (System.Exception e)
-            {
-                Debug.Log($"ERROR: Terjadi kesalahan saat memuat progres binari.\n{e.Message}");
+            //    // Putuskan aliran memori dengan File
+            //    reader.Dispose();
+            //}
+            //catch (System.Exception e)
+            //{
+            //    Debug.Log($"ERROR: Terjadi kesalahan saat memuat progres binari.\n{e.Message}");
 
-                // Putuskan aliran memori dengan File
-                reader.Dispose();
+            //    // Putuskan aliran memori dengan File
+            //    reader.Dispose();
 
-                return false;
-            }
+            //    return false;
+            //}
 
             // Putuskan aliran memori dengan File
             fileStream.Dispose();
