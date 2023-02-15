@@ -14,6 +14,13 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private UI_PoinJawaban[] _tempatPilihanJawaban = new UI_PoinJawaban[0];
 
+    [Space, Header("Scene Manager")]
+    [SerializeField]
+    private GameSceneManager _gameSceneManager = null;
+
+    [SerializeField]
+    private string _sceneMenuLevel = string.Empty;
+
     private int _indexSoal = -1;
 
     private void Start()
@@ -33,10 +40,15 @@ public class LevelManager : MonoBehaviour
         // Soal index selanjutnya
         _indexSoal++;
 
-        // Jika index melampaui soal terakhir, ulang dari awal
+        // Jika index melampaui soal terakhir
         if (_indexSoal >= _soalSoal.BanyakLevel)
         {
-            _indexSoal = 0;
+            // Level Pack dianggap selesai, kembali ke menu level
+            _gameSceneManager.BukaScene(_sceneMenuLevel);
+            return;
+
+            //// Prosedur ini untuk mengulang level pack dari awal
+            //_indexSoal = 0;
         }
 
         // Ambil data Pertanyaan
