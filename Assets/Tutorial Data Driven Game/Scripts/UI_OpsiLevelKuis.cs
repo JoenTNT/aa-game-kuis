@@ -12,10 +12,10 @@ public class UI_OpsiLevelKuis : MonoBehaviour
     private void Start()
     {
         if (_levelKuis != null)
-            SetLevelPack(_levelKuis);
+            SetLevelKuis(_levelKuis);
     }
 
-    private void SetLevelPack(LevelSoalKuis levelKuis)
+    public void SetLevelKuis(LevelSoalKuis levelKuis)
     {
         _levelName.text = levelKuis.name;
         _levelKuis = levelKuis;

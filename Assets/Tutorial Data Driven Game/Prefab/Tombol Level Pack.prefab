@@ -270,5 +270,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71a9a70357000ec43b1a2deefbf69765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _tombol: {fileID: 8957736497509831642}
   _packName: {fileID: 8957736496976817437}
   _levelPack: {fileID: 0}
