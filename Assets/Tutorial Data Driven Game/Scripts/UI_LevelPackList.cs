@@ -3,6 +3,9 @@ using UnityEngine;
 public class UI_LevelPackList : MonoBehaviour
 {
     [SerializeField]
+    private UI_LevelKuisList _levelList = null;
+
+    [SerializeField]
     private UI_OpsiLevelPack _tombolLevelPack = null;
 
     [SerializeField]
@@ -14,6 +17,25 @@ public class UI_LevelPackList : MonoBehaviour
     private void Start()
     {
         LoadLevelPack();
+
+        // Subscribe events
+        UI_OpsiLevelPack.EventSaatKlik += UI_OpsiLevelPack_EventSaatKlik;
+    }
+
+    private void OnDestroy()
+    {
+        // Unsubscribe events
+        UI_OpsiLevelPack.EventSaatKlik -= UI_OpsiLevelPack_EventSaatKlik;
+    }
+
+    private void UI_OpsiLevelPack_EventSaatKlik(LevelPackKuis levelPack)
+    {
+        // Buka Menu Levels
+        _levelList.gameObject.SetActive(true);
+        _levelList.UnloadLevelPack(levelPack);
+
+        // Tutup Menu Level Packs
+        gameObject.SetActive(false);
     }
 
     // Method untuk memuat semua level pack sebelum ditampilkan
