@@ -41,6 +41,11 @@ public class LevelManager : MonoBehaviour
         NextLevel();
     }
 
+    private void OnApplicationQuit()
+    {
+        _initGameplay.Reset();
+    }
+
     public void NextLevel()
     {
         // Soal index selanjutnya

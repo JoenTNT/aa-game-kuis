@@ -16,4 +16,11 @@ public class InisialDataGameplay : ScriptableObject
         get => _saatKalah;
         set => _saatKalah = value;
     }
+    
+    public void Reset()
+    {
+        levelPack = null;
+        soalIndexKe = 0;
+        _saatKalah = false;
+    }
 }

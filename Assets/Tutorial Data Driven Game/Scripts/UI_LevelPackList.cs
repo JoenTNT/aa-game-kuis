@@ -36,6 +36,11 @@ public class UI_LevelPackList : MonoBehaviour
         UI_OpsiLevelPack.EventSaatKlik -= UI_OpsiLevelPack_EventSaatKlik;
     }
 
+    private void OnApplicationQuit()
+    {
+        _initGameplay.Reset();
+    }
+
     private void UI_OpsiLevelPack_EventSaatKlik(LevelPackKuis levelPack)
     {
         // Buka Menu Levels

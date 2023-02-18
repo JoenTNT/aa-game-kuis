@@ -33,6 +33,11 @@ public class UI_LevelKuisList : MonoBehaviour
         UI_OpsiLevelKuis.EventSaatKlik -= UI_OpsiLevelKuis_EventSaatKlik;
     }
 
+    private void OnApplicationQuit()
+    {
+        _initGameplay.Reset();
+    }
+
     private void UI_OpsiLevelKuis_EventSaatKlik(int index)
     {
         _initGameplay.soalIndexKe = index;
