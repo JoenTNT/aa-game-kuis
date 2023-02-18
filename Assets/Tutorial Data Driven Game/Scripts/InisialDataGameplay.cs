@@ -8,6 +8,7 @@ public class InisialDataGameplay : ScriptableObject
     public LevelPackKuis levelPack = null;
     public int soalIndexKe = 0;
 
+    [SerializeField]
     private bool _saatKalah = false;
 
     public bool SaatKalah
