@@ -3,6 +3,9 @@ using UnityEngine;
 public class UI_LevelKuisList : MonoBehaviour
 {
     [SerializeField]
+    private InisialDataGameplay _initGameplay = null;
+
+    [SerializeField]
     private UI_OpsiLevelKuis _tombolLevel = null;
 
     [SerializeField]
@@ -32,7 +35,7 @@ public class UI_LevelKuisList : MonoBehaviour
 
     private void UI_OpsiLevelKuis_EventSaatKlik(int index)
     {
-        // TODO: Kirim data ke Gameplay
+        _initGameplay.soalIndexKe = index;
         _gameSceneManager.BukaScene(_gameplayScene);
     }
 

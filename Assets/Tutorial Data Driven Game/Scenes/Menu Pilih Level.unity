@@ -742,6 +742,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d591d131b8fc6c842a313db12f722258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _initGameplay: {fileID: 11400000, guid: 781aac92fb5f1c44682ecb1996e8a0d8, type: 2}
   _levelList: {fileID: 2141962877}
   _tombolLevelPack: {fileID: 2479148006058854086, guid: 2ae72fc2e032c224b9b1ddfde94e9e88, type: 3}
   _content: {fileID: 1497458616}
@@ -999,6 +1000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 580a17e5cb8d2674e9a2eab8bee3084c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _initGameplay: {fileID: 11400000, guid: 781aac92fb5f1c44682ecb1996e8a0d8, type: 2}
   _tombolLevel: {fileID: 7196894610466969767, guid: b034ab3eac71a06438b8f03fb92bb336, type: 3}
   _content: {fileID: 1920849677}
   _sampelLevelPack: {fileID: 11400000, guid: 2bef463e3fe16f74c8b7efda14c1d256, type: 2}
@@ -1025,7 +1027,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5004457110521277135, guid: a5226744130a1b943934a010eff26960, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.00008564655
+      value: 0.00039966445
       objectReference: {fileID: 0}
     - target: {fileID: 5004457110564221083, guid: a5226744130a1b943934a010eff26960, type: 3}
       propertyPath: m_Pivot.x

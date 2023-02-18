@@ -2714,7 +2714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca16469c5ce694b48ac380cf3c69efff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _soalSoal: {fileID: 11400000, guid: 2bef463e3fe16f74c8b7efda14c1d256, type: 2}
+  _initGameplay: {fileID: 11400000, guid: 781aac92fb5f1c44682ecb1996e8a0d8, type: 2}
   _playerProgress: {fileID: 11400000, guid: f0df2457e976ea74a8c40cfde2014dcf, type: 2}
   _tempatPertanyaan: {fileID: 1456360293}
   _tempatPilihanJawaban:

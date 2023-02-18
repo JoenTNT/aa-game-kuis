@@ -3,7 +3,10 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     [SerializeField]
-    private LevelPackKuis _soalSoal = null;
+    private InisialDataGameplay _initGameplay = null;
+
+    //[SerializeField]
+    //private LevelPackKuis _soalSoal = null;
 
     [SerializeField]
     private PlayerProgress _playerProgress = null;
@@ -31,7 +34,10 @@ public class LevelManager : MonoBehaviour
         //    // Buat simpanan progres atau ganti dengan yang baru
         //    _playerProgress.SimpanProgres();
         //}
-        
+
+        // Atur mulai di level ke berapa
+        _indexSoal = _initGameplay.soalIndexKe - 1;
+
         NextLevel();
     }
 
@@ -41,7 +47,7 @@ public class LevelManager : MonoBehaviour
         _indexSoal++;
 
         // Jika index melampaui soal terakhir
-        if (_indexSoal >= _soalSoal.BanyakLevel)
+        if (_indexSoal >= _initGameplay.levelPack.BanyakLevel)
         {
             // Level Pack dianggap selesai, kembali ke menu level
             _gameSceneManager.BukaScene(_sceneMenuLevel);
@@ -52,7 +58,7 @@ public class LevelManager : MonoBehaviour
         }
 
         // Ambil data Pertanyaan
-        LevelSoalKuis soal = _soalSoal.AmbilLevelKe(_indexSoal);
+        LevelSoalKuis soal = _initGameplay.levelPack.AmbilLevelKe(_indexSoal);
 
         // Set informasi soal
         _tempatPertanyaan.SetPertanyaan($"Level {_indexSoal + 1}", soal.pertanyaan, soal.hint);

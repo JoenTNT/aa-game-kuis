@@ -3,6 +3,9 @@ using UnityEngine;
 public class UI_LevelPackList : MonoBehaviour
 {
     [SerializeField]
+    private InisialDataGameplay _initGameplay = null;
+
+    [SerializeField]
     private UI_LevelKuisList _levelList = null;
 
     [SerializeField]
@@ -36,6 +39,8 @@ public class UI_LevelPackList : MonoBehaviour
 
         // Tutup Menu Level Packs
         gameObject.SetActive(false);
+
+        _initGameplay.levelPack = levelPack;
     }
 
     // Method untuk memuat semua level pack sebelum ditampilkan
