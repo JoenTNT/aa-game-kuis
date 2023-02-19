@@ -39,11 +39,28 @@ public class LevelManager : MonoBehaviour
         _indexSoal = _initGameplay.soalIndexKe - 1;
 
         NextLevel();
+
+        // Subscribe events
+        UI_PoinJawaban.EventJawabSoal += UI_PoinJawaban_EventJawabSoal;
+    }
+
+    private void OnDestroy()
+    {
+        // Unsubscribe events
+        UI_PoinJawaban.EventJawabSoal -= UI_PoinJawaban_EventJawabSoal;
     }
 
     private void OnApplicationQuit()
     {
         _initGameplay.Reset();
+    }
+
+    private void UI_PoinJawaban_EventJawabSoal(string jawaban, bool adalahBenar)
+    {
+        if (adalahBenar)
+        {
+            _playerProgress.progresData.koin += 20;
+        }
     }
 
     public void NextLevel()
