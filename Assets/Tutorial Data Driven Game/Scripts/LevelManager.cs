@@ -50,9 +50,22 @@ public class LevelManager : MonoBehaviour
 
     private void UI_PoinJawaban_EventJawabSoal(string jawaban, bool adalahBenar)
     {
-        if (adalahBenar)
+        // Cek jika tidak benar, maka abaikan prosedur
+        if (!adalahBenar) return;
+
+        string namaLevelPack = _initGameplay.levelPack.name;
+        int levelTerakhir = _playerProgress.progresData.progresLevel[namaLevelPack];
+
+        // Cek apabila level terakhir kali main telah diselesaikan
+        if (_indexSoal + 2 > levelTerakhir)
         {
+            // Tambahkan koin sebagai hadiah dari menyelesaikan soal kuis
             _playerProgress.progresData.koin += 20;
+
+            // Membuka level selanjutnya agar dapat diakses di menu level
+            _playerProgress.progresData.progresLevel[namaLevelPack] = _indexSoal + 2;
+
+            _playerProgress.SimpanProgres();
         }
     }
 
