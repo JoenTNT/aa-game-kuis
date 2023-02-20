@@ -28,13 +28,6 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        //// Chek apabila tidak berhasil memuat progres
-        //if (!_playerProgress.MuatProgres())
-        //{
-        //    // Buat simpanan progres atau ganti dengan yang baru
-        //    _playerProgress.SimpanProgres();
-        //}
-
         // Atur mulai di level ke berapa
         _indexSoal = _initGameplay.soalIndexKe - 1;
 
