@@ -45,9 +45,11 @@ public class UI_LevelKuisList : MonoBehaviour
     }
 
     // Membuka, memuat, dan menampilkan level dari isi Level Pack
-    public void UnloadLevelPack(LevelPackKuis levelPack)
+    public void UnloadLevelPack(LevelPackKuis levelPack, PlayerProgress.MainData playerData)
     {
         HapusIsiKonten();
+
+        int levelTerbukaTerakhir = playerData.progresLevel[levelPack.name] - 1;
 
         for (int i = 0; i < levelPack.BanyakLevel; i++)
         {
@@ -59,6 +61,13 @@ public class UI_LevelKuisList : MonoBehaviour
             // Masukkan objek tombol sebagai anak dari objek "content"
             t.transform.SetParent(_content);
             t.transform.localScale = Vector3.one;
+
+            // Cek apabila melewati level terakhir yang belum diselesaikan pemain
+            if (i > levelTerbukaTerakhir)
+            {
+                // Kunci tombol agar pemain tidak dapat menekan tombol level
+                t.InteraksiTombol = false;
+            }
         }
     }
 

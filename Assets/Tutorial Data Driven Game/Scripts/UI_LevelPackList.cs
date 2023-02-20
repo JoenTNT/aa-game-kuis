@@ -17,6 +17,8 @@ public class UI_LevelPackList : MonoBehaviour
     //[Space, SerializeField]
     //private LevelPackKuis[] _levelPacks = new LevelPackKuis[0];
 
+    private PlayerProgress.MainData _playerData;
+
     private void Start()
     {
         //LoadLevelPack();
@@ -49,7 +51,7 @@ public class UI_LevelPackList : MonoBehaviour
 
         // Buka Menu Levels
         _levelList.gameObject.SetActive(true);
-        _levelList.UnloadLevelPack(levelPack);
+        _levelList.UnloadLevelPack(levelPack, _playerData);
 
         // Tutup Menu Level Packs
         gameObject.SetActive(false);
@@ -60,6 +62,8 @@ public class UI_LevelPackList : MonoBehaviour
     // Method untuk memuat semua level pack sebelum ditampilkan
     public void LoadLevelPack(LevelPackKuis[] levelPacks, PlayerProgress.MainData playerData)
     {
+        _playerData = playerData;
+
         foreach (var lp in levelPacks)
         {
             // Membuat salinan objek dari prefab tombol level pack
