@@ -11,6 +11,9 @@ public class UI_MenuConfirmMessage : MonoBehaviour
     [SerializeField]
     private GameObject _pesanTakCukupKoin = null;
 
+    private UI_OpsiLevelPack _referensiTombolOpsi = null;
+    private LevelPackKuis _levelPack = null;
+
     private void Start()
     {
         if (gameObject.activeSelf)
@@ -26,7 +29,8 @@ public class UI_MenuConfirmMessage : MonoBehaviour
         UI_OpsiLevelPack.EventSaatKlik -= UI_OpsiLevelPack_EventSaatKlik;
     }
 
-    private void UI_OpsiLevelPack_EventSaatKlik(LevelPackKuis levelPack, bool terkunci)
+    private void UI_OpsiLevelPack_EventSaatKlik(UI_OpsiLevelPack referensiTombolOpsi,
+        LevelPackKuis levelPack, bool terkunci)
     {
         // Cek apakah terkunci atau tidak, jika tidak maka abaikan
         if (!terkunci) return;
@@ -45,5 +49,19 @@ public class UI_MenuConfirmMessage : MonoBehaviour
         // Jika cukup
         _pesanTakCukupKoin.SetActive(false);
         _pesanCukupKoin.SetActive(true);
+
+        // Simpan data referensi sementara
+        _levelPack = levelPack;
+        _referensiTombolOpsi = referensiTombolOpsi;
+    }
+
+    public void BeliPaket()
+    {
+        // Buka level pack yang dibeli
+        _playerData.progresData.koin -= _levelPack.Harga;
+        _playerData.progresData.progresLevel[_levelPack.name] = 1;
+
+        _playerData.SimpanProgres();
+        _referensiTombolOpsi.BukaLevelPack();
     }
 }

@@ -26,7 +26,7 @@ public class UI_LevelPackList : MonoBehaviour
         // Cek apakah setelah Gameplay sempat kalah
         if (_initGameplay.SaatKalah)
         {
-            UI_OpsiLevelPack_EventSaatKlik(_initGameplay.levelPack, false);
+            UI_OpsiLevelPack_EventSaatKlik(null, _initGameplay.levelPack, false);
         }
 
         // Subscribe events
@@ -44,7 +44,8 @@ public class UI_LevelPackList : MonoBehaviour
         _initGameplay.Reset();
     }
 
-    private void UI_OpsiLevelPack_EventSaatKlik(LevelPackKuis levelPack, bool terkunci)
+    private void UI_OpsiLevelPack_EventSaatKlik(UI_OpsiLevelPack referensiOpsiTombol,
+        LevelPackKuis levelPack, bool terkunci)
     {
         // Cek apakah terkunci, jika terkunci abaikan
         if (terkunci) return;
