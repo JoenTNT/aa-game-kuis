@@ -44,6 +44,11 @@ public class AudioManager : MonoBehaviour
 
     public void PlayBGM(int index)
     {
+        // Abaikan jika suara Background yang sama digantikan
+        if (_bgm.clip == _bgmClips[index])
+            return;
+
         _bgm.clip = _bgmClips[index];
+        _bgm.Play();
     }
 }

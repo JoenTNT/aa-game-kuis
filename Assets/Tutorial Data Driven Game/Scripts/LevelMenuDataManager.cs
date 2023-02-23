@@ -28,5 +28,8 @@ public class LevelMenuDataManager : MonoBehaviour
         _levelPackList.LoadLevelPack(_levelPacks, _playerProgress.progresData);
 
         _teksKoin.text = $"{_playerProgress.progresData.koin}";
+
+        // Mainkan suara BGM untuk menu Level
+        AudioManager.instance.PlayBGM(0);
     }
 }

@@ -33,6 +33,9 @@ public class LevelManager : MonoBehaviour
 
         NextLevel();
 
+        // Mainkan suara BGM untuk gameplay
+        AudioManager.instance.PlayBGM(1);
+
         // Subscribe events
         UI_PoinJawaban.EventJawabSoal += UI_PoinJawaban_EventJawabSoal;
     }
