@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 772.8
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Project
   m_RootView: {fileID: 7}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 119
+  controlID: 13102
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -202,7 +202,7 @@ MonoBehaviour:
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
-  m_LastLoadedLayoutName: 
+  m_LastLoadedLayoutName: Portrait Mobile Development - Single Window
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -229,7 +229,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 146
+  controlID: 13122
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -339,7 +339,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 26fbffff
+      m_ExpandedIDs: d0f5ffff16f6ffff26fbffff406300004463000076630000aa630000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -451,7 +451,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets
+  - Assets/Temporary
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\Work\Project\Agate Academy - Kuis Game\Game Project
   m_LockTracker:
@@ -488,7 +488,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000008461000086610000886100008a610000
+    m_ExpandedIDs: 000000008461000086610000886100008a61000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -515,7 +515,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -918,7 +918,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: 1.3113346, y: 2.2315404, z: -0.97920275}
     speed: 2
-    m_Value: {x: 1.3113346, y: 2.2315404, z: -0.97920275}
+    m_Value: {x: 0.027012847, y: -0.5646301, z: 0.018082062}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -971,7 +971,7 @@ MonoBehaviour:
   m_Size:
     m_Target: 2.0567875
     speed: 2
-    m_Value: 2.0567875
+    m_Value: 3.205239
   m_Ortho:
     m_Target: 1
     speed: 2
