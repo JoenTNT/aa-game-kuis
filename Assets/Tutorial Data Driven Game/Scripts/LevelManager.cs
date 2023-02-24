@@ -24,6 +24,16 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private string _sceneMenuLevel = string.Empty;
 
+    [Space, Header("Suara Event")]
+    [SerializeField]
+    private PemanggilSuara _pemanggilSuara = null;
+
+    [SerializeField]
+    private AudioClip _suaraJawabanBenar = null;
+
+    [SerializeField]
+    private AudioClip _suaraJawabanSalah = null;
+
     private int _indexSoal = -1;
 
     private void Start()
@@ -53,6 +63,8 @@ public class LevelManager : MonoBehaviour
 
     private void UI_PoinJawaban_EventJawabSoal(string jawaban, bool adalahBenar)
     {
+        _pemanggilSuara.PanggilSuara(adalahBenar ? _suaraJawabanBenar : _suaraJawabanSalah);
+
         // Cek jika tidak benar, maka abaikan prosedur
         if (!adalahBenar) return;
 
