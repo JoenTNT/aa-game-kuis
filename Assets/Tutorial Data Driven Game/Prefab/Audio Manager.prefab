@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bgmPrefab: {fileID: 6375592568161015247, guid: 50d472911c26663439363d14d15a10aa, type: 3}
+  _sfxPrefab: {fileID: 6992631572765178682, guid: 25b40d9297b092340855b323de8f2975, type: 3}
   _bgmClips:
   - {fileID: 8300000, guid: 3c70d90b957eae24ebec5a68cd9119e6, type: 3}
   - {fileID: 8300000, guid: 8cb4b4f4c6219fe4ea80a59e74bffeb4, type: 3}

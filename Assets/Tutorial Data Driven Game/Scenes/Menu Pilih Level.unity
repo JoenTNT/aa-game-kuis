@@ -824,37 +824,9 @@ PrefabInstance:
       value: Pilih Level Pack
       objectReference: {fileID: 0}
     - target: {fileID: 1788598171027435308, guid: 1c39fae3662dfbc48b6ff88369551a0b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1788598171027435308, guid: 1c39fae3662dfbc48b6ff88369551a0b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1788598171027435308, guid: 1c39fae3662dfbc48b6ff88369551a0b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1705210886}
-    - target: {fileID: 1788598171027435308, guid: 1c39fae3662dfbc48b6ff88369551a0b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1788598171027435308, guid: 1c39fae3662dfbc48b6ff88369551a0b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BukaScene
-      objectReference: {fileID: 0}
-    - target: {fileID: 1788598171027435308, guid: 1c39fae3662dfbc48b6ff88369551a0b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameSceneManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1788598171027435308, guid: 1c39fae3662dfbc48b6ff88369551a0b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Start Menu
-      objectReference: {fileID: 0}
-    - target: {fileID: 1788598171027435308, guid: 1c39fae3662dfbc48b6ff88369551a0b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c39fae3662dfbc48b6ff88369551a0b, type: 3}
 --- !u!224 &751668456 stripped
@@ -1909,68 +1881,20 @@ PrefabInstance:
       value: Pilih Level
       objectReference: {fileID: 0}
     - target: {fileID: 1788598171027435308, guid: 1c39fae3662dfbc48b6ff88369551a0b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1788598171027435308, guid: 1c39fae3662dfbc48b6ff88369551a0b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1788598171027435308, guid: 1c39fae3662dfbc48b6ff88369551a0b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1788598171027435308, guid: 1c39fae3662dfbc48b6ff88369551a0b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 778494189}
     - target: {fileID: 1788598171027435308, guid: 1c39fae3662dfbc48b6ff88369551a0b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1821881241}
-    - target: {fileID: 1788598171027435308, guid: 1c39fae3662dfbc48b6ff88369551a0b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1788598171027435308, guid: 1c39fae3662dfbc48b6ff88369551a0b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1788598171027435308, guid: 1c39fae3662dfbc48b6ff88369551a0b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetTrigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 1788598171027435308, guid: 1c39fae3662dfbc48b6ff88369551a0b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 1788598171027435308, guid: 1c39fae3662dfbc48b6ff88369551a0b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.Animator, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1788598171027435308, guid: 1c39fae3662dfbc48b6ff88369551a0b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 1788598171027435308, guid: 1c39fae3662dfbc48b6ff88369551a0b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1788598171027435308, guid: 1c39fae3662dfbc48b6ff88369551a0b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1788598171027435308, guid: 1c39fae3662dfbc48b6ff88369551a0b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: KeLevelPacks
-      objectReference: {fileID: 0}
-    - target: {fileID: 1788598171027435308, guid: 1c39fae3662dfbc48b6ff88369551a0b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 1788598171027435308, guid: 1c39fae3662dfbc48b6ff88369551a0b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c39fae3662dfbc48b6ff88369551a0b, type: 3}
@@ -2536,7 +2460,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5004457110521277135, guid: a5226744130a1b943934a010eff26960, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.00015421333
+      value: 0.000013442491
       objectReference: {fileID: 0}
     - target: {fileID: 5004457110564221083, guid: a5226744130a1b943934a010eff26960, type: 3}
       propertyPath: m_Pivot.x
@@ -2792,7 +2716,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5004457110521277135, guid: a5226744130a1b943934a010eff26960, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.00015421333
+      value: 0.000013442491
       objectReference: {fileID: 0}
     - target: {fileID: 5004457110564221083, guid: a5226744130a1b943934a010eff26960, type: 3}
       propertyPath: m_Pivot.x

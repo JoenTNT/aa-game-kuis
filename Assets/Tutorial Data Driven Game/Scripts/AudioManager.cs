@@ -9,9 +9,13 @@ public class AudioManager : MonoBehaviour
     private AudioSource _bgmPrefab = null;
 
     [SerializeField]
+    private AudioSource _sfxPrefab = null;
+
+    [SerializeField]
     private AudioClip[] _bgmClips = new AudioClip[0];
 
     private AudioSource _bgm = null;
+    private AudioSource _sfx = null;
 
     private void Awake()
     {
@@ -29,6 +33,10 @@ public class AudioManager : MonoBehaviour
         // Buat objek BGM
         _bgm = Instantiate(_bgmPrefab);
         DontDestroyOnLoad(_bgm);
+
+        // Buat objek SFX
+        _sfx = Instantiate(_sfxPrefab);
+        DontDestroyOnLoad(_sfx);
     }
 
     private void OnDestroy()
@@ -50,5 +58,10 @@ public class AudioManager : MonoBehaviour
 
         _bgm.clip = _bgmClips[index];
         _bgm.Play();
+    }
+
+    public void PlaySFX(AudioClip clip)
+    {
+        _sfx.PlayOneShot(clip);
     }
 }
