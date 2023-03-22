@@ -89,7 +89,11 @@ public class PlayerProgress : ScriptableObject
     public bool MuatProgres()
     {
         // Informasi untuk memuat data
+#if UNITY_EDITOR
         string directory = Application.dataPath + "/Temporary/";
+#elif (UNITY_ANDROID || UNITY_IOS) && !UNITY_EDITOR
+        string directory = Application.persistentDataPath + "/ProgresLokal/";
+#endif
         string path = directory + fileName;
 
         // Membuat Directory Temporary jika belum ada
